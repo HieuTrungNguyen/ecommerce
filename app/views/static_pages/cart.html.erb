@@ -1,0 +1,49 @@
+<table id="cart" class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th style="width: 50%">Product</th>
+      <th style="width: 50%">Price</th>
+      <th style="width: 50%">Quantity</th>
+      <th style="width: 50%" class="text-center">Sub Total</th>
+      <th style="width: 10%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Product">
+        <div class="row">
+          <div class="col-sm-2 hidden-xs" src="http://placehold.it/100x100"
+            alt="..." class="img-responsive"></div>
+          <div class="col-sm-10">
+            <h4 class="nomargin">Product Title</h4>
+          </div>
+        </div>
+      </td>
+      <td data-th="Price">$1.99</td>
+      <td data-th="Quantity">
+        <input type="number" class="form-control text-center" value="1">
+      </td>
+      <td data-th="subTotal" class="text-center">$1.99</td>
+      <td class="actions" data-th="">
+        <button class="btn btn-sm btn-info"><i class="fa fa-refresh"></i></button>
+        <button class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>
+        <%= link_to root_path, class: "btn btn-warning" do %>
+          <i class="fa fa-angle-left"></i> Continue shopping
+        <% end %>
+      </td>
+      <td colspan="2" class="hidden-xs"></td>
+      <td class="hidden-xs text-center"><strong>Total:</strong> $1.99</td>
+      <td>
+        <%= link_to root_path, class: "btn btn-success" do %>
+          <i class="fa fa-angle-right"></i>
+        <% end %>
+      </td>
+    </tr>
+  </tfoot>
+</table>
