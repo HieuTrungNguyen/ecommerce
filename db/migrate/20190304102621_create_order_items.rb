@@ -1,7 +1,7 @@
-class CreateOrderDetails < ActiveRecord::Migration[5.2]
+class CreateOrderItems < ActiveRecord::Migration[5.2]
   def change
-    create_table :order_details do |t|
-      t.decimal :unit_price, precision: 12, scale: 3
+    create_table :order_items do |t|
+      t.decimal :price, precision: 12, scale: 3
       t.integer :quantity
       t.decimal :total_price, precision: 12, scale: 3
       t.references :product, foreign_key: true

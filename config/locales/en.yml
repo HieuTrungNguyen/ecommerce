@@ -4,6 +4,24 @@ en:
       logo: "Ecommerce"
       help: "Help"
       login: "Login"
+      members: "Members"
+      account: "Account"
+      profile: "Profile"
+      setting: "Settings"
+      logout: "Log out"
+
+  sessions:
+    new:
+      remember_me: "Remember me on this computer"
+      new_user: "New user?"
+      signup_now: "Sign up now!"
+    create:
+      invalid: "Invalid email/password combination."
+
+  shared:
+    error_messages:
+      form_contains: "The form contains"
+      error: "error"
 
   static_pages:
     cart:
@@ -32,3 +50,16 @@ en:
       quantity: "Quantity"
       buy_now: "Buy now"
       add_cart: "Add to cart"
+
+  users:
+    user_form:
+      confirm: "Confirmation"
+    new:
+      create: "Create my account"
+    create:
+      create_success: "Sign up successfully. Welcome to Ecommerce!"
+    edit:
+      save: "Save changes"
+    update:
+      update_success: "You've been updated successfully!"
+      update_failed: "You aren't updated at the moment."

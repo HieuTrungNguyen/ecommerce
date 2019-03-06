@@ -6,9 +6,9 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.string :address
       t.string :city
-      t.string :state
+      t.string :phone
       t.string :country
-      t.boolean :admin
+      t.boolean :admin, default: false
 
       t.timestamps
     end

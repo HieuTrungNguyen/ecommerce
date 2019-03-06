@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-2 leftbar"></div>
+  <div class="col-md-8">
+    <div class="well well-sm">
+      <div class="row">
+        <div class="col-sm-3">
+          <%= gravatar_for @user, size: 80 %>
+        </div>
+        <div class="col-sm-9">
+          <h4 class="name-title"><%= @user.name.upcase %></h4>
+          <p>
+            <i class="glyphicon glyphicon-envelope"></i> <%= @user.email %>
+            <br>
+            <i class="glyphicon glyphicon-earphone"></i> <%= @user.phone %>
+            <br>
+            <i class="glyphicon glyphicon-home"></i> <%= @user.address %>
+            <br>
+            <i class="glyphicon glyphicon-road"></i> <%= @user.city %>
+            <br>
+            <i class="glyphicon glyphicon-globe"></i> <%= @user.country %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 rightbar"></div>
+</div>
