@@ -1,0 +1,11 @@
+sessions:
+  remember: 1
+name:
+  length: 50
+email:
+  length: 255
+pass:
+  min_length: 6
+  max_length: 50
+gravatar:
+  size: 50

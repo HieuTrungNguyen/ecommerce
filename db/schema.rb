@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_102803) do
+ActiveRecord::Schema.define(version: 2019_03_06_150414) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -18,20 +18,24 @@ ActiveRecord::Schema.define(version: 2019_03_04_102803) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "order_details", force: :cascade do |t|
-    t.decimal "unit_price", precision: 12, scale: 3
+  create_table "order_items", force: :cascade do |t|
+    t.decimal "price", precision: 12, scale: 3
     t.integer "quantity"
     t.decimal "total_price", precision: 12, scale: 3
     t.integer "product_id"
     t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_order_details_on_order_id"
-    t.index ["product_id"], name: "index_order_details_on_product_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "status"
+    t.string "customer_name"
+    t.string "customer_address"
+    t.string "customer_phone"
+    t.string "customer_city"
+    t.string "customer_country"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,11 +68,13 @@ ActiveRecord::Schema.define(version: 2019_03_04_102803) do
     t.string "password_digest"
     t.string "address"
     t.string "city"
-    t.string "state"
+    t.string "phone"
     t.string "country"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "remember_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
