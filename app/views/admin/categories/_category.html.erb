@@ -1,0 +1,10 @@
+<tr>
+  <td><%= category.name %></td>
+  <td>
+    <%= link_to t(".edit"), edit_admin_category_path(category), class: "btn btn-primary" %>
+  </td>
+  <td>
+    <%= link_to t(".delete"), admin_category_path(category), method: :delete,
+    data: {confirm: t(".sure")}, class: "btn btn-danger" %>
+  </td>
+</tr>
