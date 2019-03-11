@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :city
       t.string :phone
       t.string :country
+      t.integer :role
       t.boolean :admin, default: false
 
       t.timestamps

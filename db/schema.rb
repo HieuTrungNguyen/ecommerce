@@ -45,7 +45,8 @@ ActiveRecord::Schema.define(version: 2019_03_06_150414) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.decimal "unit_price", precision: 12, scale: 3
+    t.decimal "price", precision: 12, scale: 3
+    t.integer "quantity"
     t.string "image"
     t.integer "category_id"
     t.datetime "created_at", null: false
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_150414) do
     t.string "city"
     t.string "phone"
     t.string "country"
+    t.integer "role"
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

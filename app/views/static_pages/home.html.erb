@@ -13,21 +13,8 @@
       <p><%= link_to t(".learn_more"), signup_path, class: "btn btn-lg btn-primary" %></p>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <img src="https://cdn.shopify.com/s/files/1/1373/3003/products/light-up-led-shoes-yeezy-black7.jpg?v=1505913439" alt="...">
-          <div class="caption">
-            <h3><%= link_to t(".product_title"), show_path %></h3>
-            <p><%= t ".product_descript" %></p>
-            <p><%= t ".price" %>: $50</p>
-            <p>
-              <a href="" class="btn btn-default" role="button">
-                <%= t ".add_cart" %>
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
+      <%= render @products %>
     </div>
+    <%= will_paginate @products %>
   </div>
 </div>
