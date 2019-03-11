@@ -1,4 +1,27 @@
 en:
+  admin:
+    categories:
+      category:
+        edit: "Edit"
+        delete: "Delete"
+        sure: "You sure?"
+      new:
+        create: "Create category"
+      create:
+        create_success: "New category is created successfully"
+      index:
+        new_category: "New Category"
+        category: "Category"
+        action: "Action"
+      edit:
+        save: "Save changes"
+      update:
+        update_success: "This category is updated."
+        update_failed: "Don't updated this category at the moment!"
+      destroy:
+        delete_success: "Deleted successfully."
+        delete_failed: "Deleted failed!"
+
   layouts:
     header:
       logo: "Ecommerce"
@@ -9,6 +32,7 @@ en:
       profile: "Profile"
       setting: "Settings"
       logout: "Log out"
+      categories: "Categories"
 
   sessions:
     new:

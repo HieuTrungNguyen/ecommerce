@@ -1,0 +1,16 @@
+<div class="row">
+  <%= link_to t(".new_category"), new_admin_category_path, class: "btn btn-primary" %>
+</div>
+<div class="row">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><%= t ".category" %></th>
+        <th colspan="2"><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @categories %>
+    </tbody>
+  </table>
+</div>
