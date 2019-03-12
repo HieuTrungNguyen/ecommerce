@@ -1,0 +1,30 @@
+<table id="cart" class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th class="w-50"><%= t ".product" %></th>
+      <th class="w-10"><%= t ".price" %></th>
+      <th class="w-8"><%= t ".quantity" %></th>
+      <th class="w-22 text-center"><%= t ".subTotal" %></th>
+      <th class="w-10"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "cart_item", collection: @products, as: :product %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>
+        <%= link_to root_path, class: "btn btn-warning" do %>
+          <i class="fa fa-angle-left"></i> <%= t ".continue" %>
+        <% end %>
+      </td>
+      <td colspan="2" class="hidden-xs"></td>
+      <td class="hidden-xs text-center"><strong><%= t ".total" %></strong></td>
+      <td>
+        <%= link_to root_path, class: "btn btn-success" do %>
+          <%= t ".checkout" %> <i class="fa fa-angle-right"></i>
+        <% end %>
+      </td>
+    </tr>
+  </tfoot>
+</table>

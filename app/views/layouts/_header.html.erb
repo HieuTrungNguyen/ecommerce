@@ -3,6 +3,11 @@
     <%= link_to t(".logo"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path do %>
+            <%= t ".carts" %> <i class="glyphicon glyphicon-shopping-cart"></i>
+          <% end %>
+        </li>
         <% if logged_in? %>
           <li><%= link_to t(".members"), users_path %></li>
           <% if current_user.admin? %>

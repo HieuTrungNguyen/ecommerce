@@ -6,4 +6,6 @@ class Product < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: Settings.product.name_length}
   validates :price, :quantity, :image, presence: true
+
+  scope :load_product_by_ids, -> product_ids {where id: product_ids}
 end

@@ -31,6 +31,18 @@ en:
         update_success: "Updated successfully!"
         update_failed: "Don't updated at the moment."
 
+  carts:
+    cart_item:
+      price: "$%{price}"
+    index:
+      product: "Product"
+      price: "Price"
+      quantity: "Quantity"
+      subTotal: "Sub Total"
+      continue: "Continue shopping"
+      total: "Total"
+      checkout: "Checkout"
+
   layouts:
     header:
       logo: "Ecommerce"
@@ -42,6 +54,7 @@ en:
       setting: "Settings"
       logout: "Log out"
       categories: "Categories"
+      carts: "Carts"
 
   products:
     product:
@@ -61,15 +74,6 @@ en:
       error: "error"
 
   static_pages:
-    cart:
-      product: "Product"
-      price: "Price"
-      quantity: "Quantity"
-      subTotal: "Sub Total"
-      product_title: "Product Title"
-      product_descript: "Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet."
-      continue_shopping: "Continue Shopping"
-      total: "Total"
     home:
       category: "Category"
       sub_category: "Sub Category"
