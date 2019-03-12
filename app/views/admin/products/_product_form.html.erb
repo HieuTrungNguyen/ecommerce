@@ -1,0 +1,18 @@
+<%= form_for [:admin, @product] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :category %>
+  <%= f.select :category, options_for_select(@categories), {prompt: t(".selete")},
+    class: "form-control" %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :description %>
+  <%= f.text_field :description, class: "form-control" %>
+  <%= f.label :price %>
+  <%= f.text_field :price, class: "form-control" %>
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity, class: "form-control" %>
+  <%= f.label :image %>
+  <%= f.file_field :image, multiple: true %>
+  <%= f.submit t(".submit"), class: "btn btn-primary" %>
+<% end %>

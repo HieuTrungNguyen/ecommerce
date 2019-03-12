@@ -21,6 +21,15 @@ en:
       destroy:
         delete_success: "Deleted successfully."
         delete_failed: "Deleted failed!"
+    products:
+      product_form:
+        selete: "Selete"
+        submit: "Submit"
+      create:
+        create_success: "Create successfully!"
+      update:
+        update_success: "Updated successfully!"
+        update_failed: "Don't updated at the moment."
 
   layouts:
     header:
@@ -33,6 +42,10 @@ en:
       setting: "Settings"
       logout: "Log out"
       categories: "Categories"
+
+  products:
+    product:
+      add_cart: "Add to cart"
 
   sessions:
     new:
@@ -62,10 +75,6 @@ en:
       sub_category: "Sub Category"
       welcome: "Hello, welcome to my ecommerce application"
       learn_more: "Learn more..."
-      product_title: "YZ™ LED Light Up Shoes"
-      product_descript: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Provident incidunt, voluptatem quaerat reprehenderit voluptate dolorem, quos facilis cum perspiciatis, blanditiis reiciendis. Velit commodi quae, rem dolore et quidem. Perspiciatis, assumenda!"
-      price: "Price"
-      add_cart: "Add to cart"
     show:
       title: "Original Version of Some product name"
       descript: "Description"
