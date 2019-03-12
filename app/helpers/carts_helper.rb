@@ -1,5 +1,5 @@
 module CartsHelper
-  def current_cart
+  def set_cart
     @cart = session[:cart] ||= {}
   end
 end
