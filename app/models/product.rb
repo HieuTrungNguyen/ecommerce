@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
-  belongs_to :category
+  attr_accessor :quantity_in_cart
 
+  belongs_to :category
   has_many :order_details
   has_many :reviews
 

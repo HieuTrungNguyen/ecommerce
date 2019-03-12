@@ -11,11 +11,15 @@
   </td>
   <td data-th="Price"><%= t ".price", price: product.price %></td>
   <td data-th="Quantity">
-    <input type="number" class="form-control text-center" min="1" value="1">
+    <input type="number" class="form-control text-center" min="1"
+     value="<%= product.quantity_in_cart %>">
   </td>
   <td data-th="subTotal" class="text-center">$1.99</td>
   <td class="actions" data-th="">
     <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+    <%= link_to remove_cart_path(product), id: "destroy-product",
+      "data-href": remove_cart_path(product), class: "btn btn-danger btn-sm" do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
   </td>
 </tr>

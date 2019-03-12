@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
-  before_action :current_cart
+  before_action :set_cart
   before_action :load_product, except: [:index]
-  before_action :load_products_list, only: [:index]
+  before_action :current_cart, only: [:index]
 
   def index; end
 
@@ -14,13 +14,21 @@ class CartsController < ApplicationController
     redirect_to root_url
   end
 
+  def remove_cart
+    session[:cart].delete @product.id.to_s if session[:cart].key?(@product.id.to_s)
+    redirect_to carts_url
+  end
+
   private
   def load_product
     @product = Product.find_by id: params[:id_product]
     render_404 unless @product
   end
 
-  def load_products_list
-    @products = Product.load_product_by_ids session[:cart].keys
+  def current_cart
+    @product_of_current_cart = Product.load_product_by_ids session[:cart].keys
+    @product_of_current_cart.each do |item|
+      item.quantity_in_cart = session[:cart][item.id.to_s]
+    end
   end
 end
