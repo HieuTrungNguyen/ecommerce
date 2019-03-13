@@ -19,7 +19,10 @@
         <% end %>
       </td>
       <td colspan="2" class="hidden-xs"></td>
-      <td class="hidden-xs text-center"><strong><%= t ".total" %></strong></td>
+      <td class="total-price text-center">
+        <span><strong><%= t ".total" %>: </strong></span>
+        <%= t ".total_price", total_price: total_price_of_cart.sum %>
+      </td>
       <td>
         <%= link_to root_path, class: "btn btn-success" do %>
           <%= t ".checkout" %> <i class="fa fa-angle-right"></i>

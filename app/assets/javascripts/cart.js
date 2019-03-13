@@ -8,7 +8,19 @@ $('#destroy-product').click(function(event) {
       self.parents('tr').remove();
     }
     error: function() {
-      alert('can not delete this item');
+      alert(I18n.t('carts.remove_cart.error'));
+    }
+  });
+});
+
+$('.quantity').focusout(function () {
+  self = $(this);
+  $.ajax({
+    url: '/update_hard_cart',
+    method: 'put',
+    data: {
+      id_product: self.data('product'),
+      quantity: self.val()
     }
   });
 });

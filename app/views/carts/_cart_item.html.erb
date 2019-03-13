@@ -2,19 +2,23 @@
   <td data-th="Product">
     <div class="row">
       <div class="col-sm-2 hidden-xs">
-        <img src="http://placehold.it/100x100" alt="..." class="img-responsive"/>
+        <%= image_tag product.image, size: Settings.image.size,
+         alt: I18n.t("carts.cart_item.image_alt") %>
       </div>
       <div class="col-sm-10">
         <h4 class="nomargin"><%= product.name %></h4>
       </div>
     </div>
   </td>
-  <td data-th="Price"><%= t ".price", price: product.price %></td>
+  <td data-th="Price" class="price"><%= t ".price", price: product.price %></td>
   <td data-th="Quantity">
-    <input type="number" class="form-control text-center" min="1"
-     value="<%= product.quantity_in_cart %>">
+    <input type="number" class="quantity form-control text-center"
+     min="<%= Settings.quantity.default %>" max="<%= product.quantity %>"
+     value="<%= product.quantity_in_cart %>" data-product="<%= product.id %>">
   </td>
-  <td data-th="subTotal" class="text-center">$1.99</td>
+  <td data-th="subTotal" class="subTotal text-center">
+    <%= t ".price", price: product.price * product.quantity_in_cart %>
+  </td>
   <td class="actions" data-th="">
     <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
     <%= link_to remove_cart_path(product), id: "destroy-product",
@@ -23,3 +27,4 @@
     <% end %>
   </td>
 </tr>
+<%= javascript_include_tag "cart" %>

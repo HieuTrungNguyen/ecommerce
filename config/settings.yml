@@ -15,3 +15,5 @@ product:
   name_length: 255
 quantity:
   default: 1
+image:
+  size: "50x50"

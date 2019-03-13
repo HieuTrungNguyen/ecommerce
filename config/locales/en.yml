@@ -34,6 +34,7 @@ en:
   carts:
     cart_item:
       price: "$%{price}"
+      image_alt: "Edit Entry"
     index:
       product: "Product"
       price: "Price"
@@ -42,6 +43,11 @@ en:
       continue: "Continue shopping"
       total: "Total"
       checkout: "Checkout"
+      total_price: "$%{total_price}"
+    update_hard_cart:
+      validate_fail: "Not enough quantity."
+    remove_cart:
+      error: "can not delete this item"
 
   layouts:
     header:
