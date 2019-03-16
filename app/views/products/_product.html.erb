@@ -6,7 +6,8 @@
       <p><%= truncate(product.description, length: 20) %></p>
       <p><%= number_to_currency product.price %></p>
       <p>
-        <%= link_to t(".add_cart"), add_cart_path(product), class: "btn btn-default" %>
+        <%= link_to t(".add_cart"), add_cart_path(product),
+          remote: true, method: :get, class: "btn btn-default" %>
       </p>
     </div>
   </div>

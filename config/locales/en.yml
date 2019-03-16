@@ -48,6 +48,9 @@ en:
       validate_fail: "Not enough quantity."
     remove_cart:
       error: "can not delete this item"
+    add_cart:
+      alert_success: "This product has been added to cart."
+      alert_fail: "Error occurs!"
 
   layouts:
     header:

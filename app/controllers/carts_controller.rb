@@ -11,7 +11,11 @@ class CartsController < ApplicationController
     else
       session[:cart][@product.id.to_s] = Settings.quantity.default
     end
-    redirect_to root_url
+    respond_to do |format|
+      format.html {render "static_pages/home"}
+      format.json {}
+      format.js
+    end
   end
 
   def remove_cart
