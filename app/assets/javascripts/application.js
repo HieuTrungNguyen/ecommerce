@@ -17,3 +17,5 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require cart
+//= require sweetalert2
+//= require sweet-alert2-rails
