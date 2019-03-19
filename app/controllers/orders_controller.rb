@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :logged_in_user
+
   def index
     @orders = current_user.orders.newest.paginate page: params[:page],
       per_page: Settings.per_page
@@ -16,15 +18,15 @@ class OrdersController < ApplicationController
         @product_of_current_cart = Product.load_product_by_ids session[:cart].keys
         @product_of_current_cart.each do |product|
           product.quantity_in_cart = session[:cart][product.id.to_s]
-          total_price = product.product_of_current_cart * product.price
-          @order.order_items.save! product_id: product.id,
-                                   quantity: product.product_of_current_cart,
+          total_price = product.quantity_in_cart * product.price
+          @order.order_items.create! product_id: product.id,
+                                   quantity: product.quantity_in_cart,
                                    price: product.price,
                                    total_price: total_price
         end
-        flash[:success] = t ".order success"
+        flash[:success] = t ".order_success"
         session[:cart] = nil
-        redirect_to root_url
+        redirect_to orders_url
       else
         flash[:danger] = t ".order_fail"
         render :new

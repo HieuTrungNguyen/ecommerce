@@ -1,4 +1,7 @@
 en:
+  must_login: "You must login first."
+  price: "$%{price}"
+
   admin:
     categories:
       category:
@@ -33,7 +36,6 @@ en:
 
   carts:
     cart_item:
-      price: "$%{price}"
       image_alt: "Edit Entry"
     index:
       product: "Product"
@@ -65,13 +67,40 @@ en:
       categories: "Categories"
       carts: "Carts"
 
+  order_items:
+    index:
+      client_inform: "Client Information"
+      name: "Name:"
+      address: "Address:"
+      phone: "Phone:"
+      city: "City:"
+      country: "Country:"
+      payment_details: "PAYMENT DETAILS"
+      bill_account: "Bill Account"
+      purchase_date: "Purchase Date"
+      number: "No."
+      items: "Items"
+      quantity: "Quantity"
+      unit_price: "Unit Price"
+      sub_total: "Sub Total"
+      back: "Back"
+      continue_shopping: "Continue shopping"
+
   orders:
+    order:
+      details: "Details"
     order_form:
       name: "Name"
       phone: "Phone"
       address: "Address"
       city: "City"
       country: "Country"
+    index:
+      order_history: "My Order History"
+      date: "Date"
+      id: "Order ID"
+      status: "Status"
+      total: "Order Total"
     new:
       submit: "Submit"
     create:
