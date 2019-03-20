@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :orders
   has_many :reviews
+  has_many :order_items, through: :orders
 
   before_save {email.downcase!}
 

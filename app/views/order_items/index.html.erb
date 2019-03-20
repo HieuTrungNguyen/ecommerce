@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row pad-top-botm client-info">
+    <div class="col-md-6">
+      <h4><strong><%= t ".client_inform" %></strong></h4>
+      <strong><%= t ".name" %> <%= current_user.name %></strong>
+      <br>
+      <b><%= t ".address" %> </b><%= current_user.address %>
+      <br>
+      <b><%= t ".phone" %> </b><%= current_user.phone %>
+      <br>
+      <b><%= t ".city" %> </b><%= current_user.city %>
+      <br>
+      <b><%= t ".country" %> </b><%= current_user.country %>
+    </div>
+    <div class="col-md-6">
+      <h4><strong><%= t ".payment_details" %></strong></h4>
+      <b><%= t ".bill_account" %></b>
+      <br>
+      <b><%= t ".purchase_date" %></b><%= %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th><%= t ".number" %></th>
+            <th><%= t ".items" %></th>
+            <th><%= t ".quantity" %></th>
+            <th><%= t ".unit_price" %></th>
+            <th><%= t ".sub_total" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @order_items %>
+        </tbody>
+      </table>
+    </div>
+    <div class="ttl-amts">
+      <h5><strong><%= t ".bill_account" %></strong></h5>
+    </div>
+  </div>
+  <div class="row pad-top-botm">
+    <hr>
+    <%= link_to t(".back"), :back, class: "btn btn-primary" %>
+    <%= link_to t(".continue_shopping"), root_path, class: "btn btn-warning" %>
+  </div>
+</div>

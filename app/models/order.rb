@@ -7,5 +7,5 @@ class Order < ApplicationRecord
   validates :customer_phone, :customer_address, :customer_city,
     :customer_country, presence: true
 
-  scope :newest, ->{order(created_at: desc)}
+  scope :newest, ->{order(created_at: :desc)}
 end

@@ -24,7 +24,7 @@
         <%= t ".total_price", total_price: total_price_of_cart.sum %>
       </td>
       <td>
-        <%= link_to new_user_order_path(current_user), class: "btn btn-success" do %>
+        <%= link_to new_order_path(current_user), class: "btn btn-success" do %>
           <%= t ".checkout" %> <i class="fa fa-angle-right"></i>
         <% end %>
       </td>
