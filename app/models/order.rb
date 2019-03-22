@@ -7,5 +7,7 @@ class Order < ApplicationRecord
   validates :customer_phone, :customer_address, :customer_city,
     :customer_country, presence: true
 
+  enum status: [:cancelled, :in_progress, :completed, :invoiced]
+
   scope :newest, ->{order(created_at: :desc)}
 end

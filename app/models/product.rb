@@ -9,4 +9,5 @@ class Product < ApplicationRecord
   validates :price, :quantity, :image, presence: true
 
   scope :load_product_by_ids, -> product_ids {where id: product_ids}
+  scope :load_product, ->{where "quantity > ?", 0}
 end

@@ -66,6 +66,7 @@ en:
       logout: "Log out"
       categories: "Categories"
       carts: "Carts"
+      orders: "Orders"
 
   order_items:
     index:
@@ -89,6 +90,7 @@ en:
   orders:
     order:
       details: "Details"
+      cancel: "Cancel"
     order_form:
       name: "Name"
       phone: "Phone"
@@ -104,7 +106,7 @@ en:
     new:
       submit: "Submit"
     create:
-      order_success: "Order successfully!"
+      order_success: "Create order successfully!"
       order_fail: "Order failed."
       empty_cart: "Your cart is empty, please select at least 1 product for order."
 
@@ -152,3 +154,10 @@ en:
     update:
       update_success: "You've been updated successfully!"
       update_failed: "You aren't updated at the moment."
+
+  order:
+    status:
+      cancelled: "Canceled"
+      in_progress: "Progressing"
+      completed: "Completed"
+      invoiced: "Invoiced"

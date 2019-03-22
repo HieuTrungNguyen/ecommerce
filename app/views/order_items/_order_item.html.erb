@@ -2,6 +2,6 @@
   <td><%= order_item.id %></td>
   <td><%= order_item.product.name %></td>
   <td><%= order_item.quantity %></td>
-  <td><%= t "price", price: order_item.price %></td>
+  <td><%= t "price", price: order_item.unit_price %></td>
   <td><%= t "price", price: order_item.total_price %></td>
 </tr>
