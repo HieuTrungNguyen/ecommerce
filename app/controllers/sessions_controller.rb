@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
+    session[:cart] = {}
     redirect_to root_url
   end
 end

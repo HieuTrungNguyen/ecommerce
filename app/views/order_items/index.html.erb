@@ -2,15 +2,15 @@
   <div class="row pad-top-botm client-info">
     <div class="col-md-6">
       <h4><strong><%= t ".client_inform" %></strong></h4>
-      <strong><%= t ".name" %> <%= current_user.name %></strong>
+      <strong><%= t ".name" %> <%= @customerOrder.customer_name %></strong>
       <br>
-      <b><%= t ".address" %> </b><%= current_user.address %>
+      <b><%= t ".address" %> </b><%= @customerOrder.customer_address %>
       <br>
-      <b><%= t ".phone" %> </b><%= current_user.phone %>
+      <b><%= t ".phone" %> </b><%= @customerOrder.customer_phone %>
       <br>
-      <b><%= t ".city" %> </b><%= current_user.city %>
+      <b><%= t ".city" %> </b><%= @customerOrder.customer_city %>
       <br>
-      <b><%= t ".country" %> </b><%= current_user.country %>
+      <b><%= t ".country" %> </b><%= @customerOrder.customer_country %>
     </div>
     <div class="col-md-6">
       <h4><strong><%= t ".payment_details" %></strong></h4>
