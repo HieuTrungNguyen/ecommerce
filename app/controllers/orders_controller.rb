@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :check_cart_empty, only: [:create]
   before_action :load_order, only: [:cancel]
   before_action :load_orders, only: [:index, :cancel]
+  before_action :current_cart, :quantity_in_cart, only: [:new, :create]
 
   def index; end
 
@@ -19,11 +20,11 @@ class OrdersController < ApplicationController
           product.quantity_in_cart = session[:cart][product.id.to_s]
           unit_price = product.price
           total_price = product.quantity_in_cart * unit_price
-          order_item = OrderItem.new order_id: @order.id,
-                                     product_id: product.id,
-                                     quantity: product.quantity_in_cart,
-                                     unit_price: unit_price,
-                                     total_price: total_price
+          order_item = @order.order_items.new order_id: @order.id,
+                                              product_id: product.id,
+                                              quantity: product.quantity_in_cart,
+                                              unit_price: unit_price,
+                                              total_price: total_price
           order_item.save!
         end
         update_product_quantity @order
@@ -46,8 +47,8 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit :user_id, :customer_name, :customer_phone,
-      :customer_address, :customer_city, :customer_country
+    params.require(:order).permit :user_id, :total_price, :customer_name,
+      :customer_phone, :customer_address, :customer_city, :customer_country
   end
 
   def redirect_if_cart_empty

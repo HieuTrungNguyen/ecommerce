@@ -7,14 +7,13 @@
           <%= link_to carts_path do %>
             <% if logged_in? && session[:cart].present? %>
               <span class="badge" id="number-products-cart">
-                <%= session[:cart].size %>
+                <%= session[:cart].size unless session[:cart].empty? %>
               </span>
             <% end %>
             <%= t ".carts" %> <i class="glyphicon glyphicon-shopping-cart"></i>
           <% end %>
         </li>
         <% if logged_in? %>
-          <li><%= link_to t(".members"), users_path %></li>
           <% if current_user.admin? %>
             <li><%= link_to t(".categories"), admin_categories_path %></li>
           <% else %>
