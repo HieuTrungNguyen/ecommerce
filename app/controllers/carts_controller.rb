@@ -1,7 +1,8 @@
 class CartsController < ApplicationController
   before_action :set_cart
+  before_action :logged_in_user, only: [:index]
   before_action :load_product, except: [:index]
-  before_action :current_cart, only: [:index]
+  before_action :current_cart, :quantity_in_cart, only: [:index]
 
   def index; end
 
@@ -37,13 +38,6 @@ class CartsController < ApplicationController
   def load_product
     @product = Product.find_by id: params[:id_product]
     render_404 unless @product
-  end
-
-  def current_cart
-    @product_of_current_cart = Product.load_product_by_ids session[:cart].keys
-    @product_of_current_cart.each do |item|
-      item.quantity_in_cart = session[:cart][item.id.to_s]
-    end
   end
 
   def validate_quantity_cart product, quantity, update_hard = false

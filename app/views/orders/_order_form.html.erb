@@ -2,16 +2,17 @@
   <%= render "shared/error_messages", object: f.object %>
 
   <%= f.hidden_field :user_id, value: current_user.id, class: "form-control" %>
+  <%= f.hidden_field :total_price, value: total_price_of_cart.sum %>
 
   <%= f.label :customer_name, t(".name") %>
-  <%= f.text_field :customer_name, class: "form-control" %>
+  <%= f.text_field :customer_name, value: current_user.name, class: "form-control" %>
   <%= f.label :customer_phone, t(".phone") %>
-  <%= f.text_field :customer_phone, class: "form-control" %>
+  <%= f.text_field :customer_phone, value: current_user.phone, class: "form-control" %>
   <%= f.label :customer_address, t(".address") %>
-  <%= f.text_field :customer_address, class: "form-control" %>
+  <%= f.text_field :customer_address, value: current_user.address, class: "form-control" %>
   <%= f.label :customer_city, t(".city") %>
-  <%= f.text_field :customer_city, class: "form-control" %>
+  <%= f.text_field :customer_city, value: current_user.city, class: "form-control" %>
   <%= f.label :customer_country, t(".country") %>
-  <%= f.text_field :customer_country, class: "form-control" %>
+  <%= f.text_field :customer_country, value: current_user.country, class: "form-control" %>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

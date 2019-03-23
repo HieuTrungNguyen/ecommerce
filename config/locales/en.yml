@@ -59,7 +59,6 @@ en:
       logo: "Ecommerce"
       help: "Help"
       login: "Login"
-      members: "Members"
       account: "Account"
       profile: "Profile"
       setting: "Settings"
@@ -157,7 +156,7 @@ en:
 
   order:
     status:
-      cancelled: "Canceled"
+      cancelled: "Cancelled"
       in_progress: "Progressing"
       completed: "Completed"
       invoiced: "Invoiced"
