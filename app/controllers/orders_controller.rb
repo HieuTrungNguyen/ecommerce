@@ -27,7 +27,6 @@ class OrdersController < ApplicationController
                                               total_price: total_price
           order_item.save!
         end
-        update_product_quantity @order
         create_order_success
       else
         flash[:danger] = t ".order_fail"
@@ -68,12 +67,6 @@ class OrdersController < ApplicationController
   def load_orders
     @orders = current_user.orders.newest.paginate page: params[:page],
       per_page: Settings.per_page
-  end
-
-  def update_product_quantity order
-    order.order_items.each do |detail|
-      detail.product.decrement!(:quantity, detail.quantity) if detail.persisted?
-    end
   end
 
   def rollback_product_quantity order
