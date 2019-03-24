@@ -27,6 +27,8 @@ en:
     orders:
       order:
         view: "View"
+        approve: "Approve"
+        reject: "Reject"
       index:
         orders_list: "All Orders List"
         action: "Action"
