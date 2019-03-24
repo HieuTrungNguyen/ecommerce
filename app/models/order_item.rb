@@ -5,5 +5,7 @@ class OrderItem < ApplicationRecord
   validates :unit_price, presence: true
   validates :quantity, presence: true
 
+  delegate :name, to: :product, allow_nil: true, prefix: true
+
   scope :find_by_order_id, -> order_id{where order_id: order_id}
 end

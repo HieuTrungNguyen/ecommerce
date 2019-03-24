@@ -24,6 +24,12 @@ en:
       destroy:
         delete_success: "Deleted successfully."
         delete_failed: "Deleted failed!"
+    orders:
+      order:
+        view: "View"
+      index:
+        orders_list: "All Orders List"
+        action: "Action"
     products:
       product_form:
         selete: "Selete"
@@ -77,13 +83,14 @@ en:
       city: "City:"
       country: "Country:"
       payment_details: "PAYMENT DETAILS"
-      bill_account: "Bill Account"
-      purchase_date: "Purchase Date"
+      bill_account: "Bill Account:"
+      purchase_date: "Purchase Date:"
       number: "No."
       items: "Items"
       quantity: "Quantity"
       unit_price: "Unit Price"
       sub_total: "Sub Total"
+      total: "Total:"
       back: "Back"
       continue_shopping: "Continue shopping"
 
@@ -103,6 +110,7 @@ en:
       id: "Order ID"
       status: "Status"
       total: "Order Total"
+      action: "Action"
     new:
       submit: "Submit"
     create:
