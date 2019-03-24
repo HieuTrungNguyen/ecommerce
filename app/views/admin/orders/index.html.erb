@@ -1,0 +1,18 @@
+<div class="row">
+  <h3 class="text-center"><%= t ".orders_list" %></h3>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th><%= t "orders.index.date" %></th>
+        <th><%= t "orders.index.id" %></th>
+        <th><%= t "orders.index.status" %></th>
+        <th><%= t "orders.index.total" %></th>
+        <th><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody id="admin-orders">
+      <%= render @orders %>
+    </tbody>
+  </table>
+  <%= will_paginate @orders %>
+</div>
