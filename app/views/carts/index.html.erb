@@ -24,8 +24,10 @@
         <%= t ".total_price", total_price: total_price_of_cart.sum %>
       </td>
       <td>
-        <%= link_to new_order_path(current_user), class: "btn btn-success" do %>
-          <%= t ".checkout" %> <i class="fa fa-angle-right"></i>
+        <% unless session[:cart].empty? || session[:cart].size == 0 %>
+          <%= link_to new_order_path(current_user), class: "btn btn-success" do %>
+            <%= t ".checkout" %> <i class="fa fa-angle-right"></i>
+          <% end %>
         <% end %>
       </td>
     </tr>

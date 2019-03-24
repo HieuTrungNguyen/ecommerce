@@ -12,6 +12,7 @@ class CartsController < ApplicationController
     else
       session[:cart][@product.id.to_s] = Settings.quantity.default
     end
+    update_increment_product_quantity Settings.quantity.default
     respond_to do |format|
       format.html {render "static_pages/home"}
       format.json {}
@@ -28,8 +29,16 @@ class CartsController < ApplicationController
     unless validate_quantity_cart @product, params[:quantity].to_i, true
       return render_validate_fail
     end
+    return return_if_quantity_is_zero if params[:quantity].to_i < Settings.quantity.default
     if session[:cart].key? @product.id.to_s
-      session[:cart][@product.id.to_s] = params[:quantity].to_i
+      current_quantity = session[:cart][@product.id.to_s]
+      params_quantity = params[:quantity].to_i
+      if current_quantity > params_quantity
+        update_decrement_product_quantity(current_quantity - params_quantity)
+      elsif current_quantity < params_quantity
+        update_increment_product_quantity(params_quantity - current_quantity)
+      end
+      session[:cart][@product.id.to_s] = params_quantity
     end
     redirect_to carts_url
   end
@@ -51,5 +60,18 @@ class CartsController < ApplicationController
   def render_validate_fail
     flash[:danger] = t ".validate_fail"
     redirect_to carts_url
+  end
+
+  def return_if_quantity_is_zero
+    flash[:danger] = t ".validate_quantity"
+    redirect_to carts_url
+  end
+
+  def update_decrement_product_quantity quantity
+    @product.decrement! :quantity, quantity
+  end
+
+  def update_increment_product_quantity quantity
+    @product.increment! :quantity, quantity
   end
 end
