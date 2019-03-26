@@ -1,6 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to t(".logo"), root_path, id: "logo" %>
+    <%= form_tag search_product_path, remote: true,
+      class: "navbar-form navbar-left" do %>
+      <%= text_field_tag :search, params[:search], placeholder: t(".search"),
+        class: "m_bottom_0 form-control" %>
+    <% end %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>

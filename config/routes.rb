@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   put "orders/:id_order", to: "orders#cancel", as: :cancel
   put "approve/:id_order", to: "admin/orders#approve", as: :approve
   put "reject/:id_order", to: "admin/orders#reject", as: :reject
+  post "products/search", to: "products#search", as: :search_product
 
   namespace :admin do
     resources :categories

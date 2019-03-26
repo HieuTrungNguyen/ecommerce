@@ -1,20 +1,11 @@
 <div class="row">
-  <div class="col-lg-3">
-    <div class="list-group">
-      <a href="" class="list-group-item active"><h3><%= t ".category" %></h3></a>
-      <a href="" class="list-group-item"><%= t ".sub_category" %></a>
-      <a href="" class="list-group-item"><%= t ".sub_category" %></a>
-      <a href="" class="list-group-item"><%= t ".sub_category" %></a>
-    </div>
+  <div class="center jumbotron">
+    <h1><%= t ".welcome" %></h1>
+    <p><%= link_to t(".learn_more"), signup_path, class: "btn btn-lg btn-primary" %></p>
   </div>
-  <div class="col-lg-9">
-    <div class="center jumbotron">
-      <h1><%= t ".welcome" %></h1>
-      <p><%= link_to t(".learn_more"), signup_path, class: "btn btn-lg btn-primary" %></p>
-    </div>
-    <div class="row">
-      <%= render @products %>
-    </div>
-    <%= will_paginate @products %>
+</div>
+<div class="row">
+  <div id="products">
+    <%= render "products/products" %>
   </div>
 </div>
