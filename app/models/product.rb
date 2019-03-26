@@ -10,4 +10,6 @@ class Product < ApplicationRecord
 
   scope :load_product_by_ids, -> product_ids {where id: product_ids}
   scope :load_product, ->{where "quantity > ?", 0}
+  scope :order_by_id, ->{order id: :desc}
+  scope :find_by_name, -> name{where("name LIKE ?", "%#{name}%") if name.present?}
 end

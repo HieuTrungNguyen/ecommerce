@@ -75,6 +75,10 @@ en:
       categories: "Categories"
       carts: "Carts"
       orders: "Orders"
+      search: "Search"
+    leftbar:
+      category: "Category"
+      sub_category: "Sub Category"
 
   order_items:
     index:
@@ -123,6 +127,8 @@ en:
   products:
     product:
       add_cart: "Add to cart"
+    search:
+      alert_fail: Sorry! we can not find this product.
 
   sessions:
     new:
@@ -139,8 +145,6 @@ en:
 
   static_pages:
     home:
-      category: "Category"
-      sub_category: "Sub Category"
       welcome: "Hello, welcome to my ecommerce application"
       learn_more: "Learn more..."
     show:

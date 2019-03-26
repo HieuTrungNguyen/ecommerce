@@ -1,0 +1,5 @@
+<% unless @products.empty? %>
+  $('#products').html('<%= j render "products/products" %>');
+<% else %>
+  alert('<%= t ".alert_fail" %>');
+<% end %>
