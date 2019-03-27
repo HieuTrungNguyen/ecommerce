@@ -1,0 +1,26 @@
+<div class="row">
+  <h1><%= t ".list" %></h1>
+  <div class="add-product">
+    <%= link_to new_admin_product_path, class: "btn btn-success btn-right" do %>
+      <i class="fa fa-plus"></i> <%= t ".new" %>
+    <% end %>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover table-striped text-center">
+      <thead>
+        <tr>
+          <th class="th"><%= t ".id" %></th>
+          <th class="th"><%= t ".name" %></th>
+          <th class="th"><%= t ".image" %></th>
+          <th class="th"><%= t ".price" %></th>
+          <th class="th"><%= t ".quantity" %></th>
+          <th class="th"><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @products %>
+      </tbody>
+    </table>
+    <%= will_paginate @products %>
+  </div>
+</div>

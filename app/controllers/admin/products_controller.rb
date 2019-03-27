@@ -16,7 +16,10 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-  def index; end
+  def index
+    @products = Product.load_product.order_by_id.paginate page: params[:page],
+      per_page: Settings.per_page
+  end
 
   def show; end
 
