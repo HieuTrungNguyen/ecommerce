@@ -33,11 +33,24 @@ en:
         orders_list: "All Orders List"
         action: "Action"
     products:
+      product:
+        edit: "Edit"
+        delete: "Delete"
+        sure: "You sure?"
       product_form:
         selete: "Selete"
         submit: "Submit"
       create:
         create_success: "Create successfully!"
+      index:
+        list: "Products List"
+        new: "New"
+        id: "Product ID"
+        name: "Name"
+        image: "Image"
+        price: "Price"
+        quantity: "Quantity"
+        action: "Action"
       update:
         update_success: "Updated successfully!"
         update_failed: "Don't updated at the moment."
