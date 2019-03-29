@@ -1,6 +1,13 @@
 <%= form_for [:admin, @category] do |f| %>
   <%= render "shared/error_messages", object: f.object %>
 
+  <%= f.fields_for :products do |ff| %>
+    <%= ff.label :name, t(".name") %>
+    <%= ff.text_field :name, class: "form-control" %>
+    <%= ff.label :image, t(".image") %>
+    <%= ff.file_field :image, class: "form-control" %>
+  <% end %>
+
   <%= f.label :name %>
   <%= f.text_field :name, class: "form-control" %>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>

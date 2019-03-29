@@ -2,12 +2,19 @@ en:
   must_login: "You must login first."
   price: "$%{price}"
 
+  date:
+    format:
+      default: "%d/%m/%Y"
+
   admin:
     categories:
       category:
         edit: "Edit"
         delete: "Delete"
         sure: "You sure?"
+      category_form:
+        name: "Product Name"
+        image: "Product Image"
       new:
         create: "Create category"
       create:
@@ -88,10 +95,8 @@ en:
       categories: "Categories"
       carts: "Carts"
       orders: "Orders"
+      admin_orders: "Admin Orders"
       search: "Search"
-    leftbar:
-      category: "Category"
-      sub_category: "Sub Category"
 
   order_items:
     index:
@@ -160,6 +165,7 @@ en:
     home:
       welcome: "Hello, welcome to my ecommerce application"
       learn_more: "Learn more..."
+      category: "Category"
     show:
       title: "Original Version of Some product name"
       descript: "Description"
