@@ -44,8 +44,4 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find_by id: params[:id]
     render_404 unless @product
   end
-
-  def load_categories
-    @categories = Category.all.map {|x| x.name}
-  end
 end

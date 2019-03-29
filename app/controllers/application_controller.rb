@@ -27,4 +27,8 @@ class ApplicationController < ActionController::Base
       item.quantity_in_cart = session[:cart][item.id.to_s]
     end
   end
+
+  def load_categories
+    @categories = Category.all
+  end
 end

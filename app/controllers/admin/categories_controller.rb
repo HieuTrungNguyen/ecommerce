@@ -49,6 +49,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit :name
+    params.require(:category).permit :name,
+      products_attributes: [:id, :name, :description, :image, :price, :quantity]
   end
 end

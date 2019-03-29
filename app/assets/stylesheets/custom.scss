@@ -6,6 +6,11 @@ $white-color: #fff;
 $gray-medium-light: #eaeaea;
 $gallery-border-color: #ddd;
 $border-corlor: #bbb;
+$alabaster: #fcfcfc;
+$dark-gray-1: #333;
+$dark-red: #ff173c;
+$dark-gray-2: #666;
+$gray94: #f0f0f0;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -210,4 +215,26 @@ h4 {
 .product td {
   height: 60px;
   line-height: 60px !important;
+}
+
+.single ul {
+  margin-bottom: 0;
+}
+
+.single li a {
+  color: $dark-gray-2;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 1px solid $gray94;
+  line-height: 40px;
+  display: block;
+  text-decoration: none;
+}
+
+.single li a:hover {
+  color: $dark-red;
+}
+
+.single li:last-child a {
+  border-bottom: 0;
 }
