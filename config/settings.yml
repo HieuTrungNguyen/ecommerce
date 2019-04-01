@@ -18,3 +18,5 @@ quantity:
 image:
   size: "50x50"
 per_page: 9
+mailer:
+  host: "localhost:3000"

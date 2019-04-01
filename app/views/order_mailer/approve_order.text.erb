@@ -1,0 +1,35 @@
+Dear <%= @user.name %>,
+Welcome to the Ecommerce47! Your order has been approved this order successfully!
+
+This is your order details informataion.
+<%= t "order_items.index.client_inform" %>
+<%= t "order_items.index.name" %> <%= @order.customer_name %>
+
+<%= t "order_items.index.phone" %> <%= @order.customer_phone %>
+
+<%= t "order_items.index.address" %> <%= @order.customer_address %>
+
+<%= t "order_items.index.city" %> <%= @order.customer_city %>
+
+<%= t "order_items.index.country" %> <%= @order.customer_country %>
+
+<%= t "order_items.index.payment_details" %>
+<%= t "order_items.index.bill_account" %> <%= t "price", price: @order.total_price %>
+
+<%= t "order_items.index.purchase_date" %> <%= @order.created_at %>
+
+<%= t "order_items.index.number" %>
+<%= t "order_items.index.items" %>
+<%= t "order_items.index.quantity" %>
+<%= t "order_items.index.unit_price" %>
+<%= t "order_items.index.sub_total" %>
+
+<% @order.order_items.each do |order_item| %>
+  <%= order_item.id %>
+  <%= order_item.product_name %>
+  <%= order_item.quantity %>
+  <%= t "price", price: order_item.unit_price %>
+  <%= t "price", price: order_item.total_price %>
+<% end %>
+
+<%= t "order_items.index.total" %> <%= t "price", price: @order.total_price %>
