@@ -3,11 +3,13 @@
   <table class="table table-hover table-striped">
     <thead>
       <tr>
+        <th><%= t "orders.index.number" %></th>
+        <th><%= t "orders.index.customer_name" %></th>
+        <th><%= t ".orders.index.customer_phone" %></th>
         <th><%= t "orders.index.date" %></th>
-        <th><%= t "orders.index.id" %></th>
         <th><%= t "orders.index.status" %></th>
         <th><%= t "orders.index.total" %></th>
-        <th><%= t ".action" %></th>
+        <th class="text-center"><%= t ".action" %></th>
       </tr>
     </thead>
     <tbody id="admin-orders">

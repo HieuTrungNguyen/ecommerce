@@ -2,21 +2,22 @@
   <div class="row pad-top-botm client-info">
     <div class="col-md-6">
       <h4><strong><%= t ".client_inform" %></strong></h4>
-      <strong><%= t ".name" %> <%= @order.customer_name %></strong>
+      <strong><%= t ".name" %>&nbsp;<%= @order.customer_name %></strong>
       <br>
-      <b><%= t ".address" %> </b><%= @order.customer_address %>
+      <b><%= t ".address" %>&nbsp;</b><%= @order.customer_address %>
       <br>
-      <b><%= t ".phone" %> </b><%= @order.customer_phone %>
+      <b><%= t ".phone" %>&nbsp;</b><%= @order.customer_phone %>
       <br>
-      <b><%= t ".city" %> </b><%= @order.customer_city %>
+      <b><%= t ".city" %>&nbsp;</b><%= @order.customer_city %>
       <br>
-      <b><%= t ".country" %> </b><%= @order.customer_country %>
+      <b><%= t ".country" %>&nbsp;</b><%= @order.customer_country %>
     </div>
     <div class="col-md-6">
       <h4><strong><%= t ".payment_details" %></strong></h4>
-      <b><%= t ".bill_account" %></b> <%= t "price", price: @order.total_price %>
+      <b><%= t ".bill_account" %></b>&nbsp;<%= t "price", price: @order.total_price %>
       <br>
-      <b><%= t ".purchase_date" %></b> <%= @order.created_at %>
+      <b><%= t ".purchase_date" %></b>&nbsp;
+      <%= l @order.created_at, format: t("date.format.default") %>
     </div>
   </div>
   <div class="row">
@@ -37,7 +38,7 @@
       </table>
     </div>
     <div class="ttl-amts">
-      <h5><strong><%= t ".total" %> <%= t "price", price: @order.total_price %></strong></h5>
+      <h5><strong><%= t ".total" %>&nbsp;<%= t "price", price: @order.total_price %></strong></h5>
     </div>
   </div>
   <div class="row pad-top-botm">

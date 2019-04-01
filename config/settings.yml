@@ -20,3 +20,12 @@ image:
 per_page: 9
 mailer:
   host: "localhost:3000"
+statuses:
+  cancelled: "cancelled"
+  in_progress: "in_progress"
+  rejected: "rejected"
+  approved: "approved"
+danger: "btn-danger"
+light: "btn-primary"
+warning: "btn-warning"
+success: "btn-success"

@@ -15,12 +15,12 @@
     <tr>
       <td>
         <%= link_to root_path, class: "btn btn-warning" do %>
-          <i class="fa fa-angle-left"></i> <%= t ".continue" %>
+          <i class="fa fa-angle-left"></i>&nbsp;<%= t ".continue" %>
         <% end %>
       </td>
       <td colspan="2" class="hidden-xs"></td>
       <td class="total-price text-center">
-        <span><strong><%= t ".total" %>: </strong></span>
+        <span><strong><%= t ".total" %>&nbsp;</strong></span>
         <%= t ".total_price", total_price: total_price_of_cart.sum %>
       </td>
       <td>

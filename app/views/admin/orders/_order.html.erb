@@ -1,18 +1,24 @@
 <tr>
-  <td><%= order.created_at %></td>
-  <td><%= order.id %></td>
-  <td><%= t "order.status.#{order.status}" %></td>
+  <td><%= order_counter + 1 %></td>
+  <td><%= order.customer_name %></td>
+  <td><%= order.customer_phone %></td>
+  <td><%= l order.created_at, format: t("date.format.default") %></td>
+  <td class="<%= status_bg order.status %>">
+    <strong><%= t "order.status.#{order.status}" %></strong>
+  </td>
   <td><%= t "price", price: order.total_price %></td>
   <td>
-    <%= link_to t(".view"), admin_order_order_items_path(order), class: "btn btn-primary" %>
+    <%= link_to admin_order_order_items_path(order), class: "btn btn-primary" do %>
+      <i class="fa fa-eye"></i>&nbsp;<%= t ".view" %>
+    <% end %>
     <% if order.in_progress? %>
       <%= link_to approve_path(order.id), remote: true, method: :put,
         class: "btn btn-success" do %>
-        <%= t ".approve" %> <i class="fa fa-pencil"></i>
+        <i class="fa fa-pencil"></i>&nbsp;<%= t ".approve" %>
       <% end %>
       <%= link_to reject_path(order.id), remote: true, method: :put,
         class: "btn btn-danger" do %>
-        <%= t ".reject" %> <i class="fa fa-eye"></i>
+        <i class="fa fa-remove"></i>&nbsp;<%= t ".reject" %>
       <% end %>
     <% end %>
   </td>

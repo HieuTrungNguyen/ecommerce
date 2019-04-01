@@ -1,15 +1,21 @@
 <tr>
-  <td><%= order.created_at %></td>
-  <td><%= order.id %></td>
-  <td><%= t "order.status.#{order.status}" %></td>
+  <td><%= order_counter + 1 %></td>
+  <td><%= order.customer_name %></td>
+  <td><%= order.customer_phone %></td>
+  <td><%= l order.created_at, format: t("date.format.default") %></td>
+  <td class="<%= status_bg order.status %>">
+    <strong><%= t "order.status.#{order.status}" %></strong>
+  </td>
   <td><%= t "price", price: order.total_price %></td>
   <td>
-    <%= link_to t(".details"), order_order_items_path(current_user, order),
-      class: "btn btn-primary" %>
+    <%= link_to order_order_items_path(current_user, order),
+      class: "btn btn-primary" do %>
+      <i class="fa fa-eye"></i>&nbsp;<%= t ".details" %>
+    <% end %>
     <% if order.in_progress? %>
       <%= link_to cancel_path(order.id), remote: true, method: :put,
         id: "cancel-order" + order.id.to_s, class: "btn btn-danger" do %>
-        <%= t ".cancel" %> <i class="fa fa-trash-o"></i>
+         <i class="fa fa-trash-o"></i>&nbsp;<%= t ".cancel" %>
       <% end %>
     <% end %>
   </td>
