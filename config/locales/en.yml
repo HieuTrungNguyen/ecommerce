@@ -4,7 +4,7 @@ en:
 
   date:
     format:
-      default: "%d/%m/%Y"
+      default: "%d/%m/%Y %H:%M"
 
   admin:
     categories:
@@ -71,7 +71,7 @@ en:
       quantity: "Quantity"
       subTotal: "Sub Total"
       continue: "Continue shopping"
-      total: "Total"
+      total: "Total:"
       checkout: "Checkout"
       total_price: "$%{total_price}"
     update_hard_cart:
@@ -130,6 +130,9 @@ en:
       country: "Country"
     index:
       order_history: "My Order History"
+      number: "No."
+      customer_name: "Customer Name"
+      customer_phone: "Customer Phone"
       date: "Date"
       id: "Order ID"
       status: "Status"
