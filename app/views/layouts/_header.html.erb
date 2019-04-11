@@ -32,10 +32,12 @@
               <li><%= link_to t(".profile"), current_user %></li>
               <li><%= link_to t(".setting"), edit_user_path(current_user) %></li>
               <li><%= link_to t(".orders"), orders_path(current_user) %></li>
-              <% if current_user.admin? %>
-                <li><%= link_to t(".admin_orders"), admin_orders_path %></li>
-              <% end %>
               <li><%= link_to t(".help"), help_path %></li>
+              <% if current_user.admin? %>
+                <li class="divider"></li>
+                <li><%= link_to t(".admin_list_orders"), admin_orders_path %></li>
+                <li><%= link_to t(".admin_list_products"), admin_products_path %></li>
+              <% end %>
               <li class="divider"></li>
               <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
             </ul>

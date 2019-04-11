@@ -15,7 +15,11 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
-//= require_tree .
 //= require cart
 //= require sweetalert2
 //= require sweet-alert2-rails
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
+//= require delete_product
+//= require_tree .

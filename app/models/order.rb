@@ -10,4 +10,9 @@ class Order < ApplicationRecord
   enum status: [:cancelled, :in_progress, :approved, :rejected]
 
   scope :newest, ->{order(created_at: :desc)}
+  scope :by_product_id, ->(product_id) do
+    joins(:order_items)
+      .where("order_items.product_id = ?", product_id)
+      .where("status = ?", Order.statuses[:in_progress])
+  end
 end
