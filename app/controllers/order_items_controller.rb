@@ -1,4 +1,5 @@
 class OrderItemsController < ApplicationController
+  before_action :logged_in_user
   before_action :load_order, only: [:index]
 
   def index

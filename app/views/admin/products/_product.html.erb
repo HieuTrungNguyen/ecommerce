@@ -1,4 +1,4 @@
-<tr class="product">
+<tr class="product-item product_<%= product.id %>">
   <td><%= product.id %></td>
   <td><%= link_to product.name, admin_product_path(product) %></td>
   <td><%= image_tag product.image, size: "50x50", alt: product.name %></td>
@@ -8,8 +8,9 @@
     <%= link_to edit_admin_product_path(product), class: "btn btn-info" do %>
       <i class="fa fa-edit"></i> <%= t ".edit" %>
     <% end %>
+    <span class="product_id hidden"><%= product.id %></span>
     <%= link_to admin_product_path(product), method: :delete,
-      data: {confirm: t(".sure")}, class: "btn btn-danger" do %>
+      class: "btn btn-danger btn-delete-product" do %>
       <i class="fa fa-trash"></i> <%= t ".delete" %>
     <% end %>
   </td>

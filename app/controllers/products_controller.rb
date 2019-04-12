@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.load_product_by_category(params[:category_id])
       .paginate page: params[:page], per_page: Settings.per_page
-    render "static_pages/home"
   end
 
   def search

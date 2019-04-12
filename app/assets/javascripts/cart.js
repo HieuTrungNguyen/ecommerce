@@ -13,7 +13,7 @@ $('#destroy-product').click(function(event) {
   });
 });
 
-$('.quantity').focusout(function () {
+$('.quantity').focusout(function() {
   self = $(this);
   $.ajax({
     url: '/update_hard_cart',

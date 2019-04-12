@@ -1,6 +1,7 @@
 en:
   must_login: "You must login first."
   price: "$%{price}"
+  error: "Error occurs!"
 
   date:
     format:
@@ -94,8 +95,9 @@ en:
       logout: "Log out"
       categories: "Categories"
       carts: "Carts"
-      orders: "Orders"
-      admin_orders: "Admin Orders"
+      orders: "Your Orders"
+      admin_list_orders: "All Member's Orders"
+      admin_list_products: "All Member's Products"
       search: "Search"
 
   order_items:
